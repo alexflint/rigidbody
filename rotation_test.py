@@ -4,8 +4,8 @@ from scipy.interpolate import InterpolatedUnivariateSpline
 
 from manifolds import numeric_jacobian
 
-from array_comparison import assert_arrays_almost_equal
-import rotation
+from .array_comparison import assert_arrays_almost_equal
+from . import rotation
 
 
 def angular_velocity_global_numerical(r0, r1, delta_t):

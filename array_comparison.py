@@ -1,6 +1,6 @@
 import numpy as np
 
-from arithmetic import spy
+from .arithmetic import spy
 
 
 def assert_arrays_almost_equal(x, y, decimals=6, linelimit=20, xlabel='LHS', ylabel='RHS'):

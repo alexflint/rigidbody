@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 
-from array_comparison import assert_arrays_almost_equal
+from .array_comparison import assert_arrays_almost_equal
 
 
 class ArrayComparisonTest(unittest.TestCase):

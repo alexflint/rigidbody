@@ -1,6 +1,6 @@
 import numpy as np
 
-from arithmetic import skew
+from .arithmetic import skew
 
 
 # Cached for efficiency...

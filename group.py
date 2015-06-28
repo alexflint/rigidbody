@@ -1,6 +1,6 @@
 import numpy as np
 
-import rotation
+from . import rotation
 
 
 class SO3(object):

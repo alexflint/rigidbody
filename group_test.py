@@ -1,10 +1,9 @@
 import unittest
 import numpy as np
 
-from array_comparison import assert_arrays_almost_equal
-import rotation
-
-from group import SO3, SE3
+from .array_comparison import assert_arrays_almost_equal
+from .group import SO3, SE3
+from . import rotation
 
 
 class SO3Test(unittest.TestCase):

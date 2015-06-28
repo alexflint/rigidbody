@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 from numpy.testing import assert_array_almost_equal
 
-import arithmetic
+from . import arithmetic
 
 class ArithmeticTest(unittest.TestCase):
 	def test_normalized(self):
