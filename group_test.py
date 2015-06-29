@@ -51,6 +51,22 @@ class SE3Test(unittest.TestCase):
         assert_arrays_almost_equal(v.orientation, r)
         assert_arrays_almost_equal(v.position, -np.dot(r, t))
 
+    def test_rt(self):
+        r = rotation.exp([.1, .2, .3])
+        t = np.array([1., 2., 3.])
+        v = SE3.from_matrix(np.hstack((r, t[:, None])))
+        rr, tt = v.rt
+        assert_arrays_almost_equal(r, rr)
+        assert_arrays_almost_equal(t, tt)
+
+    def test_rp(self):
+        r = rotation.exp([.1, .2, .3])
+        p = np.array([1., 2., 3.])
+        v = SE3(r, p)
+        rr, pp = v.rp
+        assert_arrays_almost_equal(r, rr)
+        assert_arrays_almost_equal(p, pp)
+
 
 if __name__ == '__main__':
     unittest.main()

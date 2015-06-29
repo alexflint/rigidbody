@@ -209,6 +209,13 @@ class SE3(object):
         """
         return self._orientation, self._position
 
+    @property
+    def rt(self):
+        """
+        Get the (rotation, translation) pair for this transform.
+        """
+        return self._orientation, -np.dot(self._orientation, self._position)
+
     def __mul__(self, rhs):
         """
         Multiply this transform with another.
