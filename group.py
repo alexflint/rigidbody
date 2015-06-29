@@ -155,6 +155,17 @@ class SE3(object):
         assert len(v) == SE3.DoF
         return SE3(rotation.exp(v[:3]), v[3:])
 
+    @classmethod
+    def from_matrix(cls, m):
+        """
+        Construct a rigid body transform from a 3x4 or 4x4 matrix
+        """
+        m = np.asarray(m)
+        assert m.shape in ((3, 4), (4, 4)), 'shape was %s' % str(m.shape)
+        r = m[:3, :3]
+        t = m[:3, 3]
+        return SE3(r, -np.dot(r.T, t))
+
     @property
     def orientation(self):
         """

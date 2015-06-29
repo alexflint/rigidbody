@@ -44,6 +44,13 @@ class SE3Test(unittest.TestCase):
         r = SE3.from_tangent([.1, .2, .3, -1, -2, -3])
         assert_arrays_almost_equal(r.log(), [.1, .2, .3, -1, -2, -3])
 
+    def test_from_matrix(self):
+        r = rotation.exp([.1, .2, .3])
+        t = np.array([1., 2., 3.])
+        v = SE3.from_matrix(np.hstack((r, t[:, None])))
+        assert_arrays_almost_equal(v.orientation, r)
+        assert_arrays_almost_equal(v.position, -np.dot(r, t))
+
 
 if __name__ == '__main__':
     unittest.main()
