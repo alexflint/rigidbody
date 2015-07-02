@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from .array_comparison import assert_arrays_almost_equal
-from .group import SO3, SE3
+from .transform import SO3, SE3
 from . import rotation
 
 
