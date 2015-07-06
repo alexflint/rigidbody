@@ -1,10 +1,9 @@
 import unittest
 import numpy as np
 from scipy.interpolate import InterpolatedUnivariateSpline
-
 from manifolds import numeric_jacobian
+from numericaltesting import assert_arrays_almost_equal
 
-from .array_comparison import assert_arrays_almost_equal
 from . import rotation
 
 

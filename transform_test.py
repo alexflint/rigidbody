@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
+from numericaltesting import assert_arrays_almost_equal
 
-from .array_comparison import assert_arrays_almost_equal
 from .transform import SO3, SE3
 from . import rotation
 
