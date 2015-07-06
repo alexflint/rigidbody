@@ -1,2 +1,3 @@
 numpy>=1.9.2
 manifolds>=0.1
+numericaltesting>=0.1
