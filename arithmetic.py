@@ -112,11 +112,3 @@ def dots(*a):
     Multiply an arbitrary number of matrices with np.dot.
     """
     return functools.reduce(np.dot, a)
-
-
-def spy(a, t=1e-5):
-    """
-    Return a string representation of the sparsity pattern of A.
-    """
-    a = np.atleast_2d(a)
-    return '\n'.join(map(lambda row: '['+''.join('x' if abs(val)>t else ' ' for val in row)+']', a))
